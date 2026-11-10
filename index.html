@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 min-h-screen p-6 font-sans">
+
+    <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+        
+        <h1 class="text-2xl font-semibold text-gray-800 mb-6">Student Management</h1>
+
+        <form id="studentForm" class="flex flex-wrap gap-3 mb-4 items-center">
+            <input 
+                type="text" 
+                id="studentName" 
+                placeholder="Student name" 
+                required 
+                class="flex-1 min-w-[180px] px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 text-sm"
+            >
+            <input 
+                type="email" 
+                id="studentEmail" 
+                placeholder="Email" 
+                required 
+                class="flex-1 min-w-[180px] px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 text-sm"
+            >
+            <select 
+                id="studentProgram" 
+                required 
+                class="flex-1 min-w-[160px] px-3 py-2 border border-gray-300 rounded bg-white focus:outline-none focus:ring-1 focus:ring-blue-500 text-sm"
+            >
+                <option value="" disabled selected>Select program</option>
+                <option value="BSIT">BSIT</option>
+                <option value="BSIS">BSIS</option>
+                <option value="BSCS">BSCS</option>
+            </select>
+            <button 
+                type="submit" 
+                id="submitBtn"
+                class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-4 rounded transition duration-150"
+            >
+                Add Student
+            </button>
+        </form>
+
+        <p id="statusMsg" class="text-xs text-gray-600 font-medium mb-4 hidden">
+            Student added successfully.
+        </p>
+
+        <div class="overflow-x-auto rounded border border-gray-200">
+            <table class="w-full text-left border-collapse text-sm">
+                <thead>
+                    <tr class="bg-blue-600 text-white">
+                        <th class="py-2.5 px-4 font-semibold">Name</th>
+                        <th class="py-2.5 px-4 font-semibold">Email</th>
+                        <th class="py-2.5 px-4 font-semibold">Program</th>
+                        <th class="py-2.5 px-4 font-semibold">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTableBody" class="divide-y divide-gray-200 text-gray-700 bg-gray-50">
+                
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
